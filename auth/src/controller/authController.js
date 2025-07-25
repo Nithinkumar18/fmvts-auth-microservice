@@ -43,8 +43,12 @@ const signUp = async (req,res) => {
     }
 }
 
+const home = async(req,res) => {
+    return res.status(httpConstants.SUCCESS).json("Welcome to Auth Service")
+}
 
 module.exports = {
     login,
-    signUp
+    signUp,
+    home
 }

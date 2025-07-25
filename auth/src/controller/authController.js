@@ -6,8 +6,8 @@ const logger = require('../logger/logger');
 
 const login = async (req,res) => {
     try{
-       const uemail = req.email;
-       const upassword = req.password;
+       const uemail = req.body.email;
+       const upassword = req.body.password;
        const validatedUser = await authService.userLogin(uemail,upassword);
        if(validatedUser.token){
         logger.info(`SERVICE: ${info.SERVICE_NAME} | METHOD: ${req.method} | URL: ${req.url}`);

@@ -41,7 +41,7 @@ const userLogin = async (userEmail,userPass) => {
 
 const userRegister = async(userData) => {
     try{
-       const _createUser = await axios.post(`${process.env.USERMICROSERVICEURL}/user/v1/signUp`,userData);
+       const _createUser = await axios.post(`${process.env.USERMICROSERVICEURL}/v1/user/signUp`,userData);
        const user = _createUser.data;
        if(user){
           const userId = user._id;

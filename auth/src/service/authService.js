@@ -6,7 +6,7 @@ const logger = require('../logger/logger');
 
 const userLogin = async (userEmail,userPass) => {
     try{
-       const _validUser = await axios.get(`${process.env.USERMICROSERVICEURL}/user/v1/by-email`,{ params:{email:userEmail}})
+       const _validUser = await axios.get(`${process.env.USERMICROSERVICEURL}/v1/user/by-email`,{ params:{email:userEmail}})
        const _userData = _validUser.data;
         if(_userData){
             const _pass = _userData.password;

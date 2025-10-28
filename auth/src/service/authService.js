@@ -5,9 +5,10 @@ const info = require('../constants/responseInfo');
 const logger = require('../logger/logger');
 
 const userLogin = async (userEmail,userPass) => {
+    
     try{
-       const _validUser = await axios.get(`${process.env.USERMICROSERVICEURL}/v1/user/by-email`,{ params:{email:userEmail}})
-       const _userData = _validUser.data;
+       const _validUser = await axios.get(`${process.env.USERMICROSERVICEURL}/v1/user/${userEmail}`);
+       const _userData = _validUser.data.userDetails;
         if(_userData){
             const _pass = _userData.password;
             const {email,role} = _userData;
@@ -40,8 +41,9 @@ const userLogin = async (userEmail,userPass) => {
 
 
 const userRegister = async(userData) => {
+   
     try{
-       const _createUser = await axios.post(`${process.env.USERMICROSERVICEURL}/v1/user/signUp`,userData);
+       const _createUser = await axios.post(`${process.env.USERMICROSERVICEURL}/v1/user/enroll`,userData);
        const user = _createUser.data;
        if(user){
           const userId = user._id;

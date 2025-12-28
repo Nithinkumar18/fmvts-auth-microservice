@@ -38,8 +38,9 @@ const signUp = async (req,res) => {
         }
     }
     catch(err){
+        let error_message = err.response?.data
         logger.error(`SERVICE: ${info.SERVICE_NAME} | METHOD: ${req.method} | URL: ${req.url}`,err);
-        return res.status(httpConstants.INTERNAL_SERVER_ERROR).json({message:info.ERR_USER_REGESTRATION,error:err.message});
+        return res.status(httpConstants.INTERNAL_SERVER_ERROR).json({message:info.ERR_USER_REGESTRATION,Reason:error_message});
     }
 }
 

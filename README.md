@@ -68,7 +68,7 @@ Instead, it relies on the **User Microservice** as the source of truth for user 
 Authenticate an existing user and generate a JWT token.
 
   Endpoint
-     [POST /v1/auth/login](http://localhost:3007/api/auth-ms/v1/auth/login)
+     [POST /v1/auth/login] (http://localhost:3007/api/auth-ms/v1/auth/login)
   
 
 {

@@ -68,45 +68,43 @@ Instead, it relies on the **User Microservice** as the source of truth for user 
 Authenticate an existing user and generate a JWT token.
 
   Endpoint
-     POST /v1/auth/login
-  cURL 
+     [POST /v1/auth/login](http://localhost:3007/api/auth-ms/v1/auth/login)
+  
 
-  curl --location 'http://localhost:3007/api/auth-ms/v1/auth/login' \
---header 'Content-Type: application/json' \
---data-raw '{
+{
   "email": "user@gmail.com",
   "password": "***************"
-}'
+}
 
-Sample Success Response
+
 {
   "message": "User login success!",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  "token": "string"
 }
+
 
 📝 Register (Sign-Up) User
 
-   POST /v1/auth/sign-up
+    [POST /v1/auth/sign-up](http://localhost:3007/api/auth-ms/v1/auth/sign-up)
   
-  cURL Request
-  curl --location 'http://localhost:3007/api/auth-ms/v1/auth/sign-up' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "username": "Raghu",
-  "email": "raghuv99@gmail.com",
-  "fullName": "Raghu Veer",
-  "password": "Raghueer@565",
-  "contactNumber": "8654321222",
-  "licenseNumber": "TS4543AHOPIR98067",
-  "role": "driver"
-}'
+ {
+  "username": "string",
+  "email": "string",
+  "fullName": "string",
+  "password": "string",
+  "contactNumber": "string",
+  "licenseNumber": "string",
+  "role": "string"
+}
+
 
 Sample Success Response
 
- {
+{
   "message": "User Registration successful",
   "_id": "694fc9fb4ed2e7c50742743e"
 }
+
 
 
 

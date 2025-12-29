@@ -1,6 +1,6 @@
-# fmvts-auth-microservice
 
-# 🔐 FMVTS Authentication Microservice
+
+# 🔐 FMVTS Auth Microservice
 
 The **FMVTS Authentication Microservice** is responsible for **user authentication and authorization** within the Fleet Management and Vehicle Tracking System (FMVTS).  
 It acts as the **security backbone** of the platform by validating user credentials, generating JWT tokens, and coordinating with the **User Microservice** for user verification and registration.
